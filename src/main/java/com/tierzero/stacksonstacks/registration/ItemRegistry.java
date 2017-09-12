@@ -1,13 +1,12 @@
 package com.tierzero.stacksonstacks.registration;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tierzero.stacksonstacks.core.ConfigHandler;
 import com.tierzero.stacksonstacks.core.LogHandler;
 import com.tierzero.stacksonstacks.util.OreDictUtil;
-
 import net.minecraft.item.ItemStack;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemRegistry {
 	

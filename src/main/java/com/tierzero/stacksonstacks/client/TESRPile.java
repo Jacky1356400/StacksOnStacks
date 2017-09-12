@@ -61,7 +61,7 @@ public class TESRPile extends TileEntitySpecialRenderer<TilePileContainer> {
     	ItemStack stack = player.getHeldItemMainhand();
     	if(!RegistrationHandler.isRegistered(stack))
     	    return false;
-    	RelativeBlockPos relativeBlockPos = new RelativeBlockPos(hitPos.xCoord - Math.floor(hitPos.xCoord), hitPos.yCoord - Math.floor(hitPos.yCoord), hitPos.zCoord - Math.floor(hitPos.zCoord), EnumFacing.Axis.X);
+    	RelativeBlockPos relativeBlockPos = new RelativeBlockPos(hitPos.x - Math.floor(hitPos.x), hitPos.y - Math.floor(hitPos.y), hitPos.z - Math.floor(hitPos.z), EnumFacing.Axis.X);
 
     	GlStateManager.pushMatrix();
 

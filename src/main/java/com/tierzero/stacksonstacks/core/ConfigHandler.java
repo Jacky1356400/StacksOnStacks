@@ -1,9 +1,8 @@
 package com.tierzero.stacksonstacks.core;
 
-import java.io.File;
-
-import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
+
+import java.io.File;
 
 public class ConfigHandler {
 

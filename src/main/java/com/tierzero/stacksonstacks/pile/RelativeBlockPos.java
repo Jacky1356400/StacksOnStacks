@@ -54,7 +54,7 @@ public class RelativeBlockPos {
         return new RelativeBlockPos(slotIndex);
     }
     public RelativeBlockPos(RayTraceResult hit) {
-        this(hit.hitVec.xCoord,hit.hitVec.yCoord,hit.hitVec.zCoord, EnumFacing.Axis.X);
+        this(hit.hitVec.x,hit.hitVec.y,hit.hitVec.z, EnumFacing.Axis.X);
     }
     public RelativeBlockPos(double x, double y, double z, EnumFacing.Axis axis) {
         this.axis = axis;

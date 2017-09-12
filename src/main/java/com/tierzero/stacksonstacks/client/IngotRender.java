@@ -1,14 +1,8 @@
 package com.tierzero.stacksonstacks.client;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.tierzero.stacksonstacks.core.LogHandler;
 import com.tierzero.stacksonstacks.lib.LibCore;
 import com.tierzero.stacksonstacks.pile.RelativeBlockPos;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderItem;
@@ -25,6 +19,11 @@ import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.common.model.TRSRTransformation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class IngotRender {
 

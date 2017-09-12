@@ -41,12 +41,12 @@ public class BlockPileContainer extends Block {
         return te != null && te instanceof TilePileContainer ? Optional.of((TilePileContainer) te) : Optional.empty();
     }
 
-    @Override
+    @Override @SuppressWarnings("deprecation")
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return super.getBoundingBox(state, source, pos);
     }
 
-    @Override
+    @Override @SuppressWarnings("deprecation")
     public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_) {
     }
 
@@ -86,7 +86,7 @@ public class BlockPileContainer extends Block {
         return false;
     }
 
-    @Override
+    @Override @SuppressWarnings("deprecation")
     public RayTraceResult collisionRayTrace(IBlockState state, World world, BlockPos pos, Vec3d start, Vec3d end) {
         Optional<TilePileContainer> te = getTile(world, pos);
         return te.map(t -> IntStream.range(0, t.getPile().getSlots())).get()//
@@ -105,29 +105,28 @@ public class BlockPileContainer extends Block {
     @Override
     public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {}
 
-    @Override
+    @Override @SuppressWarnings("deprecation")
     public SoundType getSoundType() {
         return SoundType.METAL;
     }
 
-    @Override
+    @Override @SuppressWarnings("deprecation")
     public EnumBlockRenderType getRenderType(IBlockState state) {
         return EnumBlockRenderType.INVISIBLE;
     }
 
 
-    @Override
-    @SideOnly(Side.CLIENT)
+    @Override @SuppressWarnings("deprecation") @SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
         return false;
     }
 
-    @Override
+    @Override @SuppressWarnings("deprecation")
     public boolean isBlockNormalCube(IBlockState blockState) {
         return false;
     }
 
-    @Override
+    @Override @SuppressWarnings("deprecation")
     public boolean isOpaqueCube(IBlockState blockState) {
         return false;
     }

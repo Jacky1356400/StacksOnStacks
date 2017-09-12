@@ -11,7 +11,7 @@ import org.apache.commons.lang3.tuple.Pair;
 public class RelativeBlockPosUtils {
 
 	public static RelativeBlockPos getRelativeBlockPositionFromMOPHit(Vec3d hit) {
-		return new RelativeBlockPos(hit.xCoord,hit.yCoord,hit.zCoord, EnumFacing.Axis.X);
+		return new RelativeBlockPos(hit.x,hit.y,hit.z, EnumFacing.Axis.X);
 	}
 
 	public static Pair<Vec3d, Vec3d> getRayTraceVectors(EntityPlayer player) {

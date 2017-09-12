@@ -9,7 +9,7 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.0"
+version = "${mc_version}-${mod_version}"
 group= "com.tierzero.stacksonstacks"
 archivesBaseName = "stackonstacks"
 
@@ -19,16 +19,29 @@ compileJava {
 }
 
 minecraft {
-    version = "1.11.2-13.20.0.2259"
+    version = "${mc_version}-${forge_version}"
     runDir = "run"
-    mappings = "snapshot_20170322"
+    mappings = "${mappings_version}"
+}
+
+repositories {
+    maven {
+        url "http://dvs1.progwml6.com/files/maven"
+    }
+	maven {
+		url  "http://tehnut.info/maven"
+	}
 }
 
 dependencies {
+    compile files('libs/')
+	deobfCompile "mezz.jei:jei_1.11.2:4.5.0.289:api"
+    runtime "mezz.jei:jei_1.11.2:4.5.0.289"
+	deobfCompile "mcp.mobius.waila:Hwyla:1.8.15-B29_1.11:api"
+	runtime "mcp.mobius.waila:Hwyla:1.8.15-B29_1.11"
 }
 
-processResources
-{
+processResources {
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
     from(sourceSets.main.resources.srcDirs) {
@@ -38,4 +51,13 @@ processResources
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'deobf'
+}
+
+artifacts {
+    archives deobfJar
 }
